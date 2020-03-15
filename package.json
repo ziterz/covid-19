@@ -1,18 +1,14 @@
 {
   "name": "covid-19",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
-  "description": "COVID-19 Coronavirus Tracker",
-  "author": {
-    "name": "ziterz"
-  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
-  "main": "index.js",
   "dependencies": {
+    "axios": "^0.19.2",
     "core-js": "^3.6.4",
     "vue": "^2.6.11",
     "vue-router": "^3.1.5",
@@ -24,23 +20,14 @@
     "@vue/cli-plugin-router": "~4.2.0",
     "@vue/cli-plugin-vuex": "~4.2.0",
     "@vue/cli-service": "~4.2.0",
-    "@vue/eslint-config-airbnb": "^5.0.2",
+    "@vue/eslint-config-standard": "^5.1.0",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.1.2",
     "vue-template-compiler": "^2.6.11"
-  },
-  "_id": "covid-19@1.0.0",
-  "bugs": {
-    "url": "https://github.com/ziterz/covid-19/issues"
-  },
-  "homepage": "https://github.com/ziterz/covid-19#readme",
-  "keywords": [],
-  "license": "ISC",
-  "readme": "ERROR: No README data found!",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ziterz/covid-19.git"
   }
 }
