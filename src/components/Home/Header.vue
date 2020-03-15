@@ -22,7 +22,6 @@
                         <span><b>{{ getHongkongCases[0].country }} : </b><span class="text-covid">{{ getHongkongCases[0].cases }}</span> cases</span>
                         <span class="mx-3">&#5867;</span>
                         <span><b>{{ getAustralianCases[0].country }} : </b><span class="text-covid">{{ getAustralianCases[0].cases }}</span> cases</span>
-                        <span class="mx-3">&#5867;</span>
                       </marquee>
                     </div>
                   </span>

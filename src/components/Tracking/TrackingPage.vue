@@ -17,7 +17,10 @@
           </div>
 
           <!-- Country Cards-->
-          <TrackingCard/>
+          <TrackingCard
+            v-for="country in countries"
+            :key="country.id"
+            :country="country"/>
         </div>
       </div>
     </div>
@@ -37,6 +40,19 @@ export default {
   components: {
     TrackingForm,
     TrackingCard
+  },
+  methods: {
+    fetchCountries () {
+      this.$store.dispatch('fetchCountries')
+    }
+  },
+  created () {
+    this.fetchCountries()
+  },
+  computed: {
+    countries () {
+      return this.$store.state.countries
+    }
   }
 }
 </script>
