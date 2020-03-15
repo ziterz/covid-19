@@ -1,0 +1,92 @@
+<template>
+  <header class="masthead text-center">
+    <div class="masthead-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 mb-5">
+            <div class="mt-4 mb-5">
+              <div class="card">
+                <div class="card-body p-2 pl-3 pr-3">
+                  <span class="card-text d-flex">
+                    <div class="btn btn-danger text-bold">News</div>
+                    <div class="flex-grow-1">
+                      <marquee behavior="" direction="" class="vertical-middle">
+                        <span><b>Global :</b> <span class="text-warning">{{ globals.cases }}</span> confirmed, <span class="text-covid">{{ globals.deaths }}</span> deaths, <span class="text-success">{{ globals.recovered }}</span> recoveries</span>
+                        <span class="mx-3">&#5867;</span>
+                        <span><b>{{ getIndonesianCases[0].country }} : </b><span class="text-covid">{{ getIndonesianCases[0].cases }}</span> cases</span>
+                        <span class="mx-3">&#5867;</span>
+                        <span><b>{{ getMalaysianCases[0].country }} : </b><span class="text-covid">{{ getMalaysianCases[0].cases }}</span> cases</span>
+                        <span class="mx-3">&#5867;</span>
+                        <span><b>{{ getSingaporeCases[0].country }} : </b><span class="text-covid">{{ getSingaporeCases[0].cases }}</span> cases</span>
+                        <span class="mx-3">&#5867;</span>
+                        <span><b>{{ getHongkongCases[0].country }} : </b><span class="text-covid">{{ getHongkongCases[0].cases }}</span> cases</span>
+                        <span class="mx-3">&#5867;</span>
+                        <span><b>{{ getAustralianCases[0].country }} : </b><span class="text-covid">{{ getAustralianCases[0].cases }}</span> cases</span>
+                        <span class="mx-3">&#5867;</span>
+                      </marquee>
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <h1 class="masthead-heading pt-5">One stop platform for data and news related to COVID-19</h1>
+            <p class="masthead-subheading mb-0">This site is a source of information on Hacktiv8 employee voluntary
+              initiatives, academics, medical professionals, fullstack developers, to the general public.</p>
+              <router-link class="btn btn-primary btn-xl rounded-pill mt-5" to="/tracking">Tracking Other Countries</router-link>
+          </div>
+          <div class="col-md-5 d-flex">
+            <img class="img-fluid my-auto" src="@/assets/img/medicine.svg" alt="">
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="svg-border-rounded text-covid">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.54 17.34" preserveAspectRatio="none" fill="currentColor">
+        <path d="M144.54,17.34H0V0H144.54ZM0,0S32.36,17.34,72.27,17.34,144.54,0,144.54,0"></path>
+      </svg>
+    </div>
+  </header>
+</template>
+
+<script>
+export default {
+  name: 'Header',
+  methods: {
+    fetchGlobals () {
+      this.$store.dispatch('fetchGlobals')
+    },
+    fetchCountries () {
+      this.$store.dispatch('fetchCountries')
+    }
+  },
+  created () {
+    this.fetchGlobals()
+    this.fetchCountries()
+  },
+  computed: {
+    globals () {
+      return this.$store.state.globals
+    },
+    getIndonesianCases () {
+      return this.$store.state.countries.filter(el => el.country === 'Indonesia')
+    },
+    getMalaysianCases () {
+      return this.$store.state.countries.filter(el => el.country === 'Malaysia')
+    },
+    getSingaporeCases () {
+      return this.$store.state.countries.filter(el => el.country === 'Singapore')
+    },
+    getHongkongCases () {
+      return this.$store.state.countries.filter(el => el.country === 'Hong Kong')
+    },
+    getAustralianCases () {
+      return this.$store.state.countries.filter(el => el.country === 'Australia')
+    }
+  }
+}
+</script>
+
+<style>
+
+</style>

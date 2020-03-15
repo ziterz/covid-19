@@ -19,13 +19,19 @@ export default new Vuex.Store({
     },
     SEARCH_COUNTRIES (state, payload) {
       state.search = payload
+    },
+    FILTER (state, payload) {
+      state.search = payload
     }
   },
   actions: {
     fetchGlobals ({ commit }) {
       axios({
         method: 'GET',
-        url: 'https://corona.lmao.ninja/all'
+        url: 'https://cors-anywhere.herokuapp.com/https://corona.lmao.ninja/all',
+        headers: {
+          'x-requested-with': 'http://localhost:8080/'
+        }
       })
         .then(({ data }) => {
           commit('FETCH_GLOBALS', data)
@@ -37,7 +43,10 @@ export default new Vuex.Store({
     fetchCountries ({ commit }) {
       axios({
         method: 'GET',
-        url: 'https://corona.lmao.ninja/countries'
+        url: 'https://cors-anywhere.herokuapp.com/https://corona.lmao.ninja/countries',
+        headers: {
+          'x-requested-with': 'http://localhost:8080/'
+        }
       })
         .then(({ data }) => {
           commit('FETCH_COUNTRIES', data)

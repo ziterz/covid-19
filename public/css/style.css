@@ -189,9 +189,6 @@ header.masthead .bg-circle-4 {
 }
 
 @media (min-width: 992px) {
-  header.masthead {
-    padding-top: calc(10rem + 55px);
-  }
   header.masthead .masthead-content .masthead-heading {
     font-size: 2rem;
   }
