@@ -11,13 +11,13 @@
               <div class="col-md-6">
                 <div class="d-flex flex-column">
                   <p class="card-text text-secondary">Confirmed</p>
-                  <h4 class="card-title">{{ country.cases }}</h4>
+                  <h4 class="card-title">{{ Number(country.cases).toLocaleString() }}</h4>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="d-flex flex-column">
                   <p class="card-text text-secondary">Deaths</p>
-                  <h4 class="card-title">{{ country.deaths }}</h4>
+                  <h4 class="card-title">{{ Number(country.deaths).toLocaleString() }}</h4>
                 </div>
               </div>
             </div>

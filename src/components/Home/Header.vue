@@ -11,17 +11,17 @@
                     <div class="btn btn-danger text-bold">News</div>
                     <div class="flex-grow-1">
                       <marquee behavior="" direction="" class="vertical-middle">
-                        <span><b>Global :</b> <span class="text-warning">{{ globals.cases }}</span> confirmed, <span class="text-covid">{{ globals.deaths }}</span> deaths, <span class="text-success">{{ globals.recovered }}</span> recoveries</span>
+                        <span><b>Global :</b> <span class="text-warning">{{ Number(globals.cases).toLocaleString() }}</span> confirmed - <span class="text-covid">{{ Number(globals.deaths).toLocaleString() }}</span> deaths - <span class="text-success">{{ Number(globals.recovered).toLocaleString() }}</span> recoveries</span>
                         <span class="mx-3">&#5867;</span>
-                        <span><b>{{ getIndonesianCases[0].country }} : </b><span class="text-covid">{{ getIndonesianCases[0].cases }}</span> cases</span>
+                        <span><b>{{ getIndonesianCases[0].country }} : </b><span class="text-covid">{{ Number(getIndonesianCases[0].cases).toLocaleString() }}</span> cases</span>
                         <span class="mx-3">&#5867;</span>
-                        <span><b>{{ getMalaysianCases[0].country }} : </b><span class="text-covid">{{ getMalaysianCases[0].cases }}</span> cases</span>
+                        <span><b>{{ getMalaysianCases[0].country }} : </b><span class="text-covid">{{ Number(getMalaysianCases[0].cases).toLocaleString() }}</span> cases</span>
                         <span class="mx-3">&#5867;</span>
-                        <span><b>{{ getSingaporeCases[0].country }} : </b><span class="text-covid">{{ getSingaporeCases[0].cases }}</span> cases</span>
+                        <span><b>{{ getSingaporeCases[0].country }} : </b><span class="text-covid">{{ Number(getSingaporeCases[0].cases).toLocaleString() }}</span> cases</span>
                         <span class="mx-3">&#5867;</span>
-                        <span><b>{{ getHongkongCases[0].country }} : </b><span class="text-covid">{{ getHongkongCases[0].cases }}</span> cases</span>
+                        <span><b>{{ getHongkongCases[0].country }} : </b><span class="text-covid">{{ Number(getHongkongCases[0].cases).toLocaleString() }}</span> cases</span>
                         <span class="mx-3">&#5867;</span>
-                        <span><b>{{ getAustralianCases[0].country }} : </b><span class="text-covid">{{ getAustralianCases[0].cases }}</span> cases</span>
+                        <span><b>{{ getAustralianCases[0].country }} : </b><span class="text-covid">{{ Number(getAustralianCases[0].cases).toLocaleString() }}</span> cases</span>
                       </marquee>
                     </div>
                   </span>

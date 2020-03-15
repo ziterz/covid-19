@@ -43,6 +43,9 @@ h6 {
 
 .form-control {
   border: 0 !important;
+}
+
+.shadow-card {
   box-shadow: 0 0.15rem 1.75rem 0 rgba(31,45,65,.15);
 }
 
@@ -199,6 +202,21 @@ header.masthead .bg-circle-4 {
 
 .bg-primary {
   background-color: #b71c1c !important;
+}
+
+.indicator {
+  font-size: 2rem !important;
+}
+
+.form-control:focus {
+  outline: 0 !important;
+  border-color: initial;
+  box-shadow: none;
+}
+
+.input-group-text {
+  border: 0 !important;
+  background-color: #fff;
 }
 
 .btn-primary {
