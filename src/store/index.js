@@ -4,6 +4,12 @@ import axios from 'axios'
 
 Vue.use(Vuex)
 
+const covid = axios.create({
+  baseURL: 'http://localhost:3000',
+  timeout: 1000,
+  headers: { 'x-requested-with': 'http://localhost:8080/' }
+})
+
 export default new Vuex.Store({
   state: {
     globals: [],
@@ -34,13 +40,7 @@ export default new Vuex.Store({
   },
   actions: {
     fetchGlobals ({ commit }) {
-      axios({
-        method: 'GET',
-        url: 'https://cors-anywhere.herokuapp.com/https://corona.lmao.ninja/all',
-        headers: {
-          'x-requested-with': 'http://localhost:8080/'
-        }
-      })
+      covid.get('/all')
         .then(({ data }) => {
           commit('FETCH_GLOBALS', data)
         })
@@ -49,13 +49,7 @@ export default new Vuex.Store({
         })
     },
     fetchCountries ({ commit }) {
-      axios({
-        method: 'GET',
-        url: 'https://cors-anywhere.herokuapp.com/https://corona.lmao.ninja/countries',
-        headers: {
-          'x-requested-with': 'http://localhost:8080/'
-        }
-      })
+      covid.get('/countries')
         .then(({ data }) => {
           commit('FETCH_COUNTRIES', data)
         })
