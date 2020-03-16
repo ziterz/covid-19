@@ -3,7 +3,7 @@
     <div class="masthead-content">
       <div class="container">
         <div class="row">
-          <div class="col-md-7 mb-5">
+          <div class="col-md-7 mb-5" data-aos="fade-right">
             <div class="mt-4 mb-5">
               <div class="card">
                 <div class="card-body p-2 pl-3 pr-3">
@@ -31,12 +31,11 @@
               </div>
             </div>
             <h1 class="masthead-heading pt-5">One stop platform for data and news related to COVID-19</h1>
-            <p class="masthead-subheading mb-0">This site is a source of information on Hacktiv8 employee voluntary
-              initiatives, academics, medical professionals, fullstack developers, to the general public.</p>
-              <router-link class="btn btn-primary btn-xl rounded-pill mt-5" to="/tracking">Tracking Other Countries</router-link>
+            <p class="masthead-subheading mb-0">This site is a source of information on Hacktiv8 employee voluntary initiatives, academics, medical professionals, fullstack developers, to the general public.</p>
+            <router-link class="btn btn-primary btn-xl rounded-pill mt-5" to="/tracking">Tracking Other Countries</router-link>
           </div>
           <div class="col-md-5 d-flex">
-            <img class="img-fluid my-auto" src="@/assets/img/medicine.svg" alt="">
+            <img class="img-fluid my-auto" data-aos="fade-left" src="@/assets/img/medicine.svg" alt="">
           </div>
         </div>
 

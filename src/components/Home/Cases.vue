@@ -5,7 +5,7 @@
         <div class="col-sm-12 text-center mt-5 mb-5 text-white">
           <h2 class="display-5">Number of COVID-19 cases in Indonesia</h2>
         </div>
-        <div class="col-sm-12 col-md-3">
+        <div class="col-sm-12 col-md-3" data-aos="fade-up-right">
           <div class="card">
             <div class="card-body covid-box">
               <h5 class="card-title text-warning">{{ Number(getIndonesianCases[0].cases).toLocaleString() }}</h5>
@@ -13,7 +13,7 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-12 col-md-3">
+        <div class="col-sm-12 col-md-3" data-aos="fade-up">
           <div class="card">
             <div class="card-body covid-box">
               <h5 class="card-title text-info">{{ Number(getInfected).toLocaleString() }}</h5>
@@ -21,7 +21,7 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-12 col-md-3">
+        <div class="col-sm-12 col-md-3" data-aos="fade-up">
           <div class="card">
             <div class="card-body covid-box">
               <h5 class="card-title text-success">{{ Number(getIndonesianCases[0].recovered).toLocaleString() }}</h5>
@@ -29,7 +29,7 @@
             </div>
           </div>
         </div>
-        <div class="col-sm-12 col-md-3">
+        <div class="col-sm-12 col-md-3" data-aos="fade-up-left">
           <div class="card">
             <div class="card-body covid-box">
               <h5 class="card-title text-danger">{{ Number(getIndonesianCases[0].deaths).toLocaleString() }}</h5>

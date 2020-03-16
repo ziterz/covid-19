@@ -1,9 +1,9 @@
 <template>
   <div id="app">
+    <vue-progress-bar></vue-progress-bar>
     <Navbar/>
     <router-view/>
     <Footer/>
-    <vue-progress-bar></vue-progress-bar>
   </div>
 </template>
 

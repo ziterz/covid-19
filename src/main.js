@@ -2,6 +2,8 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import VueProgressBar from 'vue-progressbar'
 
 const options = {
@@ -23,6 +25,9 @@ Vue.use(VueProgressBar, options)
 Vue.config.productionTip = false
 
 new Vue({
+  created () {
+    AOS.init()
+  },
   router,
   store,
   render: h => h(App)
