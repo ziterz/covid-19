@@ -8,7 +8,15 @@ export default new Vuex.Store({
   state: {
     globals: [],
     countries: [],
-    search: ''
+    search: '',
+    indonesianRecovered: 0,
+    indonesianDeaths: 0,
+    indonesianInfected: 0,
+    indonesianCases: 0,
+    malaysianCases: 0,
+    singaporeCases: 0,
+    hongkongCases: 0,
+    australianCases: 0
   },
   mutations: {
     FETCH_GLOBALS (state, payload) {
@@ -17,8 +25,8 @@ export default new Vuex.Store({
     FETCH_COUNTRIES (state, payload) {
       state.countries = payload
     },
-    SEARCH_COUNTRIES (state, payload) {
-      state.search = payload
+    INDONESIAN_CASES (state, payload) {
+      state.indonesianCases = payload.cases
     },
     FILTER (state, payload) {
       state.search = payload
@@ -54,6 +62,11 @@ export default new Vuex.Store({
         .catch(err => {
           console.log(err)
         })
+    }
+  },
+  getters: {
+    getIndonesianCases: state => {
+      return state.countries.filter(el => el.country === 'Indonesia')
     }
   },
   modules: {

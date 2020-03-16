@@ -59,7 +59,7 @@ export default {
   },
   computed: {
     getIndonesianCases () {
-      return this.$store.state.countries.filter(el => el.country === 'Indonesia')
+      return this.$store.getters.getIndonesianCases
     },
     getInfected () {
       const infected = this.getIndonesianCases[0].cases - (this.getIndonesianCases[0].recovered + this.getIndonesianCases[0].deaths)
