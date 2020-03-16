@@ -1,7 +1,7 @@
 <template>
   <section class="bg-covid pt-5">
     <div class="container">
-      <div class="row align-items-center">
+      <div class="row align-items-center"  v-if="getIndonesianCases[0]">
         <div class="col-sm-12 text-center mt-5 mb-5 text-white">
           <h2 class="display-5">Number of COVID-19 cases in Indonesia</h2>
         </div>

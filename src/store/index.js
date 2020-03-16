@@ -67,6 +67,18 @@ export default new Vuex.Store({
   getters: {
     getIndonesianCases: state => {
       return state.countries.filter(el => el.country === 'Indonesia')
+    },
+    getMalaysianCases: state => {
+      return state.countries.filter(el => el.country === 'Malaysia')
+    },
+    getSingaporeCases: state => {
+      return state.countries.filter(el => el.country === 'Singapore')
+    },
+    getHongkongCases: state => {
+      return state.countries.filter(el => el.country === 'Hong Kong')
+    },
+    getAustralianCases: state => {
+      return state.countries.filter(el => el.country === 'Australia')
     }
   },
   modules: {

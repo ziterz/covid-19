@@ -61,7 +61,7 @@ export default {
       if (this.isCalculating) {
         return 'Fetching new results'
       } else if (this.searchQueryIsDirty) {
-        return '... typing'
+        return '... is typing'
       } else {
         if (this.filterCountries.length === 0) {
           return 'No country results'

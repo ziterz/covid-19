@@ -11,17 +11,19 @@
                     <div class="btn btn-danger text-bold">News</div>
                     <div class="flex-grow-1">
                       <marquee behavior="" direction="" class="vertical-middle">
-                        <span><b>Global :</b> <span class="text-warning">{{ Number(globals.cases).toLocaleString() }}</span> confirmed - <span class="text-covid">{{ Number(globals.deaths).toLocaleString() }}</span> deaths - <span class="text-success">{{ Number(globals.recovered).toLocaleString() }}</span> recoveries</span>
-                        <span class="mx-3">&#5867;</span>
-                        <span><b>{{ getIndonesianCases[0].country }} : </b><span class="text-covid">{{ Number(getIndonesianCases[0].cases).toLocaleString() }}</span> cases</span>
-                        <span class="mx-3">&#5867;</span>
-                        <span><b>{{ getMalaysianCases[0].country }} : </b><span class="text-covid">{{ Number(getMalaysianCases[0].cases).toLocaleString() }}</span> cases</span>
-                        <span class="mx-3">&#5867;</span>
-                        <span><b>{{ getSingaporeCases[0].country }} : </b><span class="text-covid">{{ Number(getSingaporeCases[0].cases).toLocaleString() }}</span> cases</span>
-                        <span class="mx-3">&#5867;</span>
-                        <span><b>{{ getHongkongCases[0].country }} : </b><span class="text-covid">{{ Number(getHongkongCases[0].cases).toLocaleString() }}</span> cases</span>
-                        <span class="mx-3">&#5867;</span>
-                        <span><b>{{ getAustralianCases[0].country }} : </b><span class="text-covid">{{ Number(getAustralianCases[0].cases).toLocaleString() }}</span> cases</span>
+                        <span v-if="globals"><b>Global :</b> <span class="text-warning">{{ Number(globals.cases).toLocaleString() }}</span> confirmed - <span class="text-covid">{{ Number(globals.deaths).toLocaleString() }}</span> deaths - <span class="text-success">{{ Number(globals.recovered).toLocaleString() }}</span> recoveries</span>
+                        <span v-if="getIndonesianCases[0]">
+                          <span class="mx-3">&#5867;</span>
+                          <span><b>{{ getIndonesianCases[0].country }} : </b><span class="text-covid">{{ Number(getIndonesianCases[0].cases).toLocaleString() }}</span> cases</span>
+                          <span class="mx-3">&#5867;</span>
+                          <span><b>{{ getMalaysianCases[0].country }} : </b><span class="text-covid">{{ Number(getMalaysianCases[0].cases).toLocaleString() }}</span> cases</span>
+                          <span class="mx-3">&#5867;</span>
+                          <span><b>{{ getSingaporeCases[0].country }} : </b><span class="text-covid">{{ Number(getSingaporeCases[0].cases).toLocaleString() }}</span> cases</span>
+                          <span class="mx-3">&#5867;</span>
+                          <span><b>{{ getHongkongCases[0].country }} : </b><span class="text-covid">{{ Number(getHongkongCases[0].cases).toLocaleString() }}</span> cases</span>
+                          <span class="mx-3">&#5867;</span>
+                          <span><b>{{ getAustralianCases[0].country }} : </b><span class="text-covid">{{ Number(getAustralianCases[0].cases).toLocaleString() }}</span> cases</span>
+                        </span>
                       </marquee>
                     </div>
                   </span>
@@ -49,6 +51,8 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'Header',
   methods: {
@@ -67,21 +71,13 @@ export default {
     globals () {
       return this.$store.state.globals
     },
-    getIndonesianCases () {
-      return this.$store.state.countries.filter(el => el.country === 'Indonesia')
-    },
-    getMalaysianCases () {
-      return this.$store.state.countries.filter(el => el.country === 'Malaysia')
-    },
-    getSingaporeCases () {
-      return this.$store.state.countries.filter(el => el.country === 'Singapore')
-    },
-    getHongkongCases () {
-      return this.$store.state.countries.filter(el => el.country === 'Hong Kong')
-    },
-    getAustralianCases () {
-      return this.$store.state.countries.filter(el => el.country === 'Australia')
-    }
+    ...mapGetters([
+      'getIndonesianCases',
+      'getMalaysianCases',
+      'getSingaporeCases',
+      'getHongkongCases',
+      'getAustralianCases'
+    ])
   }
 }
 </script>
