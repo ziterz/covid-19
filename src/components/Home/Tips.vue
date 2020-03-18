@@ -43,7 +43,7 @@
         <div class="col-lg-6">
           <div class="p-5 tips">
             <h2 class="display-4">Disinfect working area</h2>
-            <p><span class="text-covid">Disinfect equipment and wordking area</span> at least once a day.</p>
+            <p><span class="text-covid">Disinfect equipment and working area</span> at least once a day.</p>
           </div>
         </div>
       </div>
