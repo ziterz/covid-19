@@ -29,6 +29,9 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.navbar-custom .navbar-nav .nav-item .nav-link.exact-active {
+  color: #b71c1c !important;
+  font-weight: 800;
+}
 </style>
