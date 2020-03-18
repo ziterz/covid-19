@@ -13,7 +13,8 @@ export default new Vuex.Store({
   state: {
     globals: [],
     countries: [],
-    search: '',
+    allLoading: false,
+    countriesLoading: false,
     indonesianRecovered: 0,
     indonesianDeaths: 0,
     indonesianInfected: 0,
@@ -39,6 +40,7 @@ export default new Vuex.Store({
   },
   actions: {
     fetchGlobals ({ commit }) {
+      this.state.allLoading = true
       covid.get('/all')
         .then(({ data }) => {
           commit('FETCH_GLOBALS', data)
@@ -46,14 +48,21 @@ export default new Vuex.Store({
         .catch(err => {
           console.log(err)
         })
+        .finally(() => {
+          this.state.allLoading = false
+        })
     },
     fetchCountries ({ commit }) {
+      this.state.countriesLoading = true
       covid.get('/countries')
         .then(({ data }) => {
           commit('FETCH_COUNTRIES', data)
         })
         .catch(err => {
           console.log(err)
+        })
+        .finally(() => {
+          this.state.countriesLoading = false
         })
     }
   },

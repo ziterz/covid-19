@@ -2,7 +2,8 @@
   <header class="masthead text-center">
     <div class="masthead-content">
       <div class="container my-5">
-        <div class="row">
+        <RedLoader v-if="countriesLoading"/>
+        <div class="row" v-if="!countriesLoading">
           <div class="col-md-12 mb-5">
             <div class="row">
               <div class="col-sm-8 offset-sm-2 text-center my-5 text-black">
@@ -43,9 +44,14 @@
 <script>
 import _ from 'lodash'
 import TrackingCard from './TrackingCard'
+import RedLoader from '../RedLoader'
 
 export default {
   name: 'TrackingPage',
+  components: {
+    RedLoader,
+    TrackingCard
+  },
   data () {
     return {
       searchQuery: '',
@@ -54,12 +60,15 @@ export default {
     }
   },
   computed: {
+    countriesLoading () {
+      return this.$store.state.countriesLoading
+    },
     countries () {
       return this.$store.state.countries
     },
     searchIndicator: function () {
       if (this.isCalculating) {
-        return 'Fetching new results'
+        return ''
       } else if (this.searchQueryIsDirty) {
         return '... is typing'
       } else {
@@ -83,9 +92,6 @@ export default {
       this.expensiveOperation()
     }
   },
-  components: {
-    TrackingCard
-  },
   methods: {
     fetchCountries () {
       this.$store.dispatch('fetchCountries')
@@ -95,8 +101,8 @@ export default {
       setTimeout(function () {
         this.isCalculating = false
         this.searchQueryIsDirty = false
-      }.bind(this), 1000)
-    }, 500)
+      }.bind(this), 200)
+    }, 200)
   },
   created () {
     this.fetchCountries()

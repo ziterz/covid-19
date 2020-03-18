@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+  <nav class="navbar navbar-expand-lg navbar-custom navbar-light">
     <div class="container">
       <router-link class="navbar-brand text-covid" to="/">COVID-19 Tracker</router-link>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
@@ -11,8 +11,8 @@
           <li class="nav-item">
             <router-link class="nav-link" to="/">Home</router-link>
           </li>
-          <li class="nav-item">
-            <router-link class="nav-link" to="/#tips">Tips</router-link>
+          <li class="nav-item" v-if="getRoute === '/'">
+            <a class="nav-link" href="#tips" v-smooth-scroll>Tips</a>
           </li>
           <li class="nav-item">
             <router-link class="nav-link" to="/tracking">Tracking</router-link>
@@ -25,7 +25,12 @@
 
 <script>
 export default {
-
+  name: 'Navbar',
+  computed: {
+    getRoute () {
+      return this.$route.path
+    }
+  }
 }
 </script>
 

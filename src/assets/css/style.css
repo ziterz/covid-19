@@ -1,5 +1,6 @@
 body {
   font-family: 'Nunito Sans';
+  overflow-x: hidden
 }
 
 ::selection {
@@ -61,6 +62,7 @@ h6 {
 .text-black {
   color: #000 !important;
 }
+
 .bg-covid {
   background: linear-gradient(0deg, #7f0000 0%, #b71c1c 100%) !important;
 }

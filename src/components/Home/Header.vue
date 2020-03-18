@@ -2,8 +2,9 @@
   <header class="masthead text-center">
     <div class="masthead-content">
       <div class="container">
-        <div class="row">
-          <div class="col-md-7 mb-5" data-aos="fade-right">
+        <RedLoader v-if="allLoading"/>
+        <div class="row" v-if="!allLoading">
+          <div class="col-md-7 mb-5 aos-init" data-aos="fade-right">
             <div class="mt-4 mb-5">
               <div class="card">
                 <div class="card-body p-2 pl-3 pr-3">
@@ -35,7 +36,7 @@
             <router-link class="btn btn-primary btn-xl rounded-pill mt-5" to="/tracking">Tracking Other Countries</router-link>
           </div>
           <div class="col-md-5 d-flex">
-            <img class="img-fluid my-auto" data-aos="fade-left" src="@/assets/img/medicine.svg" alt="">
+            <img class="img-fluid my-auto aos-init" data-aos="fade-left" src="@/assets/img/medicine.svg" alt="">
           </div>
         </div>
 
@@ -51,9 +52,13 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import RedLoader from '../RedLoader'
 
 export default {
   name: 'Header',
+  components: {
+    RedLoader
+  },
   methods: {
     fetchGlobals () {
       this.$store.dispatch('fetchGlobals')
@@ -69,6 +74,9 @@ export default {
   computed: {
     globals () {
       return this.$store.state.globals
+    },
+    allLoading () {
+      return this.$store.state.allLoading
     },
     ...mapGetters([
       'getIndonesianCases',

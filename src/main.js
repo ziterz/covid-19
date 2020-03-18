@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import VueProgressBar from 'vue-progressbar'
+import vueSmoothScroll from 'vue2-smooth-scroll'
 
 require('./assets/css/style.css')
 
@@ -25,6 +26,7 @@ const options = {
 }
 
 Vue.use(VueProgressBar, options)
+Vue.use(vueSmoothScroll)
 
 Vue.config.productionTip = false
 

@@ -6,7 +6,7 @@
           <h2 class="display-4">Tips: Protect yourself and others</h2>
         </div>
       </div>
-      <div class="row align-items-center" data-aos="fade-up-right">
+      <div class="row align-items-center aos-init" data-aos="fade-up-right">
         <div class="col-lg-6">
           <div class="p-5">
             <img class="img-fluid rounded-circle" src="@/assets/img/wash-hand.jpg" alt="">
@@ -20,7 +20,7 @@
           </div>
         </div>
       </div>
-      <div class="row align-items-center" data-aos="fade-up-left">
+      <div class="row align-items-center aos-init" data-aos="fade-up-left">
         <div class="col-md-6 order-md-2">
           <div class="p-5">
             <img class="img-fluid rounded-circle" src="@/assets/img/women-coughing.jpg" alt="">
@@ -34,7 +34,7 @@
           </div>
         </div>
       </div>
-      <div class="row align-items-center" data-aos="fade-up-right">
+      <div class="row align-items-center aos-init" data-aos="fade-up-right">
         <div class="col-lg-6">
           <div class="p-5">
             <img class="img-fluid rounded-circle" src="@/assets/img/cleaning-workspace.jpg" alt="">
