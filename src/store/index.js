@@ -6,9 +6,7 @@ Vue.use(Vuex)
 
 const covid = axios.create({
   // baseURL: 'http://localhost:3000',
-  baseURL: 'https://cors-anywhere.herokuapp.com/https://corona.lmao.ninja',
-  timeout: 1000,
-  headers: { 'x-requested-with': 'http://localhost:8080/' }
+  baseURL: 'https://ziterz-covid19.herokuapp.com'
 })
 
 export default new Vuex.Store({
