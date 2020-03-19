@@ -2,7 +2,7 @@
 > One stop platform for data and news related to COVID-19.
 
 [![NPM Version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
+[![Build Status](https://travis-ci.com/ziterz/covid-19.svg?token=txQauCyPDtRzPocsGRaL&branch=master)](https://travis-ci.com/ziterz/covid-19)
 [![Downloads Stats][npm-downloads]][npm-url]
 
 This site is a source of information on Hacktiv8 employee voluntary initiatives, academics, medical professionals, fullstack developers, to the general public.
