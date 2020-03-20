@@ -1,4 +1,4 @@
-<img src="https://github.com/ziterz/covid-19/blob/master/client/src/assets/img/covid19.png" width="100" height="100">
+<img src="https://github.com/ziterz/covid-19/blob/master/src/assets/img/covid19.png" width="100" height="100">
 
 # covid-19
 > One stop platform for data and news related to COVID-19.
