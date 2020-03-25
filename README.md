@@ -9,6 +9,9 @@ This site is a source of information on Hacktiv8 employee voluntary initiatives,
 
 <img src="https://covid-19-a3539.firebaseapp.com/thumbnail.png" width="600" />
 
+## Link deploy
+https://covid-19-a3539.firebaseapp.com/
+
 ## Project setup
 ```
 npm install
